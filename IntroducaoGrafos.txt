@@ -1,0 +1,29 @@
+Grafos são estruturas matemáticas que representam objetos (chamados de vertices) e as relações entre eles (arestas)
+
+Definição: G = (V(g), E(g)), onde V(g) são vértices e E(g) são as arestas
+
+Conceitos básicos:
+  Adjacência
+  Dois vértices ligados por uma aresta são adjacentes (se refere aos vertices)
+
+  Incidência
+  Uma aresta que liga dois vértices e incidente a cada um deles (se refere as arestas)
+
+  Subgrafos são subconjuntos de arestas e vértices do grafo original
+  Caminho é a sequencia de vertices ligados por arestas
+
+Tipos de Grafos:
+  Infinito, conjunto de vertices infinitos
+
+  Orientado, arestas com direção definida
+
+  Com laçoes, arestas que conectam um vertice a ele mesmo
+
+  Ponderado, Arestas ou vértices com valores atribuidos
+
+Representação dos Grafos
+  Matriz de adjacencias
+  M|V(G)| * |V(G)| onde mij = 1 se existe aresta entre vi e vj
+
+  Matriz de Incidencia
+  M|V(G)| * |E(G)| onde mij = 1 se vi é vértice da aresta ej

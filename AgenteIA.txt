@@ -1,0 +1,32 @@
+Agentes de IA são sistemas de software autônomos que usam IA para realizar tarefas complexas, tomar decisões
+e interagir com o ambiente. Eles podem analisar diferentes tipos de dados para raciocinar, aprender e se adaptar.
+Usando ferramentas e o conhecimento para cumprir objetivos
+
+Tipos de agentes:
+
+Agente de Reflexo Simples
+É um tipo mais básico de Agente, em que tomam decisões dependendo do ambiente, sem ter memória de eventos passados
+Aplicação prática: Sistema automático de controle de temperatura
+
+Agente Reflexivo baseado em modelo
+Considera o histórico de percepções e o estado atual do ambiente, tomando decisões mais sofisticadas, avaliando as 
+consequências antes de agir.
+Aplicação pática: Processos em que decisões passadas impactam as futuras, como sistema de IA para Jogos
+
+Agente de aprndizagem
+Aprendem com o tempo usando tecnicas de ML, se adaptando com base nas experiencias anteriores
+Aplicação prática: Ferramenta de recomendação de conteúdo do instagram
+
+Agente baseado na utilidade
+Os agentes tomam decisões avaliando resultados potenciais usando uma função de utilidade, considerando 
+o risco e o retorno.
+Aplicação prática: Sistema de otimização em investimentos financeiros
+
+Agnete hierarquico
+Grupos de agentes organizados em hierarquia, em que os agentes de nivel superior gerencia objetivos globais e
+quebram o problema em menores e passam para os agentes de nivel inferior para executar as tarefas
+Aplicação prática: Industria, processos de fabricação e gestão empresarial
+
+Agentes robóticos
+Realizam tarefas em ambientes complexos com sensores e algoritmos de tomada de decisão
+Aplicação prática: veículos autônomos, drones e outros ambientes robóticos em ambientes dinâmicos
