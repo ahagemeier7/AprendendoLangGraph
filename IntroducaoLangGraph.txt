@@ -1,0 +1,19 @@
+LangGraph é uma biblioteca para criar e coordenar agentes LLM complexos, facilitando o desenvoltimento de sistemas multiagentes com gráficos estruturados
+
+Estrutura:
+  Nós são os agentes de LLM 
+    Cada nó representa um agente com tarefas especificas
+
+  Bordas são os canais de comunicação
+    Conectam os agentes e permitem a troca de informações
+
+Vantagens da estrutura de grafo:
+  Permite modelar processos complexos de forma intuitiva
+
+  Facilita o controle e manutenção do sistema multiagentes
+
+  Suporte loops essenciais paara runtimes sofisticados
+
+  Gerenciamento automático de estado, em que a própria biblioteca mantem as informações relevantes para dacisões e se adapta a novas entradas com precisão
+
+  Coordenação precisa dos agentes, com uma comunicação eficaz e definição da sequência das tarefas entre os agentes de maneira fácil
