@@ -1,0 +1,11 @@
+#para criar o venv com o nome .venv
+python -m venv .venv
+
+#para ativar o venv
+.\.venv\scripts\activate
+
+#criar o requirements
+pip freeze > requirements.txt
+
+#instalar requirements.txt
+pip instal -r requirements.txt
