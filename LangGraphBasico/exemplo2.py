@@ -1,3 +1,6 @@
+#--------------------------------------
+#Desenhando o grafo
+#--------------------------------------
 from langchain_google_genai import GoogleGenerativeAI
 from langchain_core.messages import HumanMessage
 from langgraph.graph import StateGraph

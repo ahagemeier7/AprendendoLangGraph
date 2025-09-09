@@ -1,3 +1,6 @@
+#--------------------------------------
+#integrando com uma tool
+#--------------------------------------
 from langchain_core.messages import HumanMessage,SystemMessage,AIMessage
 from langchain_core.runnables.graph import MermaidDrawMethod
 from langchain_google_genai import ChatGoogleGenerativeAI
