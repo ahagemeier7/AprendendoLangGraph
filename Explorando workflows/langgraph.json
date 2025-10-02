@@ -1,0 +1,8 @@
+{
+
+  "dependencies": ["."],
+  "graphs":{
+    "parallelization": "parallelization:code_analysis_workflow"
+  }
+
+}

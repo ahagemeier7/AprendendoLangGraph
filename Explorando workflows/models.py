@@ -14,13 +14,13 @@ MODEL_CONFIGS = [
   {
     "key_name": "gemini_2.5_flash",
     "provider" : "google",
-    "model_name" : "gemini-2.5-flash-previes-04-17",
+    "model_name" : "gemini-2.5-flash",
     "temperature" : 1.0
   },
   {
-    "key_name": "gemini_1.5_flash",
+    "key_name": "gemini_2.0_flash-lite",
     "provider" : "google",
-    "model_name" : "gemini-1.5-flash-previes-002",
+    "model_name" : "gemini-2.0-flash-lite",
     "temperature" : 1.0
   }
 ]
@@ -33,7 +33,7 @@ def _create_chat_model(model_name, provider, temperature: float | None = None):
   model_class = _PROVIDER_MAP[provider]
   params = {"model": model_name}
   if temperature is not None:
-    params["temperatues"] = temperature
+    params["temperature"] = temperature
 
   return model_class(**params)
 
