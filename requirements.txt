@@ -6,3 +6,6 @@ ipykernel
 langchain-google-genai
 langgraph-cli
 langgraph-cli[inmem]
+pydantic
+starlette
+uvicorn
