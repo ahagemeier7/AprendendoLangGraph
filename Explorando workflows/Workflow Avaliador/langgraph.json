@@ -1,0 +1,8 @@
+{
+
+  "dependencies": ["."],
+  "graphs":{
+    "avaliador": "story_creator:story_workflow"
+  }
+
+}

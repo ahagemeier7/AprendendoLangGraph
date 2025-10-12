@@ -1,5 +1,5 @@
 {
-    "dependencies": ["."],
+    "dependencies": ["." , "Explorando workflows", "Explorando workflows/Workflow Parallelization"],
     "graphs":{
         "agent": "teste:export_graph"
     }

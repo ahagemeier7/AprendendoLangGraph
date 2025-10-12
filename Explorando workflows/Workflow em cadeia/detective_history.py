@@ -4,7 +4,7 @@ from operator import or_
 import random
 from langgraph.graph import START, END, StateGraph
 from langchain_core.messages import HumanMessage
-from Parallelization.models import models
+from models import models
 
 #Estados
 class State(TypedDict):
