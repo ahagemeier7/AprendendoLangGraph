@@ -1,0 +1,8 @@
+consultas:
+  - nome_arquivo: "buscar_usuario_por_email.sql"
+    descricao: "Busca um usuário específico pelo seu endereço de e-mail."
+    tags: ["usuário", "busca", "email"]
+    parametros:
+      - nome: "email_usuario"
+        tipo: "string"
+        descricao: "O e-mail a ser pesquisado."
