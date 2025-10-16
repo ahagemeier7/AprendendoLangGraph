@@ -1,8 +1,10 @@
 import os
+import time
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.engine import Engine
 from sqlalchemy.pool import QueuePool
+from sqlalchemy.exc import OperationalError
 
 load_dotenv()
 
@@ -32,7 +34,6 @@ def _build_database_url() -> str:
     if db_type.upper() == 'MSSQL':
       driver = os.getenv('DB_DRIVER', 'ODBC+Driver+17+for+SQL+Server').replace(' ', '+')
       # AVISO DE SEGURANÇA: TrustServerCertificate=yes é um risco em produção.
-      # Considere tornar isso configurável.
       return f"mssql+pyodbc://{user}:{password}@{host}:{port}/{name}?driver={driver}"#&TrustServerCertificate=yes"
     
     elif db_type.upper() == 'POSTGRES':
@@ -45,18 +46,39 @@ def _build_database_url() -> str:
 
 # Constrói a URL usando a função helper, mantendo o código principal limpo.
 DATABASE_URL = _build_database_url()
-  
-#Cria a Engine do SQLAlchemy
-#Esse objeto e o ponto central de acesso ao banco e gerencia de pool
-#Ele e criado apenas uma vez, quando o modulo e importado
-engine: Engine = create_engine(
-  DATABASE_URL,
-  poolclass=QueuePool,         # Usa o QueuePool, que é o padrão e o mais recomendado.
-  pool_size=5,                 # Número de conexões a manter abertas no pool.
-  max_overflow=10,             # Conexões extras que podem ser abertas sob carga pesada (5 + 10 = 15 total).
-  pool_timeout=30,             # Segundos para aguardar por uma conexão antes de dar erro.
-  pool_recycle=1800            # Recicla conexões após 1800s (30 min) para evitar conexões fechadas pelo DB.
-)
+
+def _create_engine_with_retries(url: str, retries: int = 5, delay: int = 5) -> Engine:
+    """
+    Tenta criar a Engine do SQLAlchemy com um mecanismo de retentativa.
+    """
+    for i in range(retries):
+        try:
+            engine = create_engine(
+                url,
+                poolclass=QueuePool,
+                pool_size=5,
+                max_overflow=10,
+                pool_timeout=30,
+                pool_recycle=1800
+            )
+            # Tenta conectar para verificar se a engine foi criada com sucesso
+            with engine.connect() as connection:
+                connection.close()
+            print(f"✅ Engine do banco de dados criada e conectada com sucesso após {i+1} tentativa(s).")
+            return engine
+        except OperationalError as e:
+            print(f"❌ Falha na conexão (tentativa {i+1}/{retries}): {e}")
+            if i < retries - 1:
+                print(f"Tentando reconectar em {delay} segundos...")
+                time.sleep(delay)
+            else:
+                raise
+        except Exception as e:
+            print(f"❌ Erro inesperado ao criar a Engine: {e}")
+            raise
+
+# Cria a Engine do SQLAlchemy com retentativas
+engine: Engine = _create_engine_with_retries(DATABASE_URL)
 
 def get_engine() -> Engine:
   """
