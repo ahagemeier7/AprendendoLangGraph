@@ -9,3 +9,5 @@ langgraph-cli[inmem]
 pydantic
 starlette
 uvicorn
+fastmcp
+langchain-mcp-adapters

@@ -1,6 +1,8 @@
 {
     "dependencies": ["." , "Explorando workflows", "Explorando workflows/Workflow Parallelization"],
     "graphs":{
-        "agent": "teste:export_graph"
+        "agent": "teste:export_graph",
+        "mcp": "exemplo:agent_mcp"
+
     }
 }
