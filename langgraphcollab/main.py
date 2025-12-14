@@ -1,4 +1,4 @@
-from mathcollab import simple_workflow,SimpleAgentState
+from mathcollab_llm import simple_workflow,SimpleAgentState
 
 def main():
   print("===Multiagente matemático===")
