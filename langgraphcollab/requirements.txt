@@ -1,0 +1,13 @@
+langgraph
+langchain_community
+langchain
+python-dotenv
+ipykernel
+langchain-google-genai
+langgraph-cli
+langgraph-cli[inmem]
+pydantic
+starlette
+uvicorn
+fastmcp
+langchain-mcp-adapters
