@@ -21,7 +21,7 @@ class GraphState(BaseModel):
     output: str
     
 #Função de resposta
-def responder(state):
+def responder(state:GraphState):
     input_message = state.input
     response = llm_model.invoke([HumanMessage(content=input_message)])
     return GraphState(input=state.input, output=response)
